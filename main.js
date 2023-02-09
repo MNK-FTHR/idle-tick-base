@@ -1,19 +1,19 @@
+import {GameLoop} from './GameLoop.js'
 const loop = new GameLoop();
 
-let currency = 0;
-let currency_per_millisecond = 0.003;
+let gold = 0;
+let gold_per_millisecond = 0.003;
 
 loop.onUpdate = function(dt, t) {
-  currency += currency_per_millisecond * dt;
+  gold += gold_per_millisecond * dt;
 };
 
 loop.onRender = function(i) {
-  currencyEl.textContent = currency.toFixed(2);
+  document.getElementById("goldDisplay").textContent = gold.toFixed(2);
 };
 
 loop.onPanic = function() {
-  // discard any accumulated lag time and hope for the best
   this.timing.lag = 0;
 };
-
+console.log(loop);
 loop.start();

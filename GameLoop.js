@@ -2,7 +2,7 @@ const STOPPED = Symbol.for("@@gameloop/stopped");
 const PAUSED = Symbol.for("@@gameloop/paused");
 const RUNNING = Symbol.for("@@gameloop/running");
 
-class GameLoop {
+export class GameLoop {
   constructor(options = {}) {
     this.state = STOPPED;
 		this.options = {
